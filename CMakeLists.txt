@@ -14,4 +14,15 @@ aux_source_directory(./memory memorySrc)
 include_directories(./dir)
 aux_source_directory(./dir dirSrc)
 
-add_executable(main main.cpp ${argsAccessSrc} ${memorySrc} ${dirSrc})
+# 文件
+include_directories(./test_io)
+aux_source_directory(./test_io testIoSrc)
+
+add_executable(
+    main 
+    main.cpp 
+    ${argsAccessSrc} 
+    ${memorySrc}
+    ${dirSrc} 
+    ${testIoSrc}
+ )
