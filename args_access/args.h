@@ -1,6 +1,6 @@
 #ifndef ARGS
 #define ARGS
 
-void test();
+void test_args();
 
 #endif
