@@ -26,6 +26,10 @@ aux_source_directory(./test_io testIoSrc)
 include_directories(./strs)
 aux_source_directory(./strs strsSrc)
 
+#设置编译器的源字符集以及目标程序字符集都为utf-8
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/source-charset:utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/execution-charset:utf-8>")
+
 add_executable(
     main 
     main.cpp 
