@@ -5,8 +5,8 @@
 
 void test_strcat()
 {
-    char *str1 = "hello";
-    char *str2 = "world";
+    const char *str1 = "hello";
+    const char *str2 = "world";
     char *dest = (char *)malloc(strlen(str1) + strlen(str2) - 1);
     dest = strcpy(dest, str1);
     printf("result dest: %s\n", dest);

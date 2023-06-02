@@ -9,7 +9,7 @@
 void test_io()
 {
     char *path = getcwd(NULL, 0);
-    char *fileName = "\\CMakeLists.txt";
+    const char *fileName = "\\CMakeLists.txt";
     strcat(path, fileName);
 
     // char * filePath = "F:\\study\\c\\cpplen\\CMakeLists.txt";

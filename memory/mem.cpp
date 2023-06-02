@@ -10,7 +10,7 @@ using namespace std;
 void test_memcopy()
 {
     cout << "test_memcopy" << endl;
-    char *src = "this is copy str";
+    const char *src = "this is copy str";
     size_t size = strlen(src);
     char *dest = (char *)malloc(size);
     char *result = (char *)memcpy(dest, src, size - 5);
@@ -30,7 +30,7 @@ void test_memcopy()
 void test_memccopy(int c, size_t minus)
 {
     cout << "test_memccopy" << endl;
-    char *src = "this is copy(C) str";
+    const char *src = "this is copy(C) str";
     size_t size = strlen(src);
     char *dest = (char *)malloc(size);
     char *result = (char *)memccpy(dest, src, c, size - minus);
@@ -47,7 +47,7 @@ void test_memccopy(int c, size_t minus)
 
 void test_memchr()
 {
-    char *buffer = "test_memchar";
+    const char *buffer = "test_memchar";
     cout << "source Str: " << buffer << endl;
     char *result = (char *)memchr(buffer, 'a', strlen(buffer));
     if (result != NULL)
