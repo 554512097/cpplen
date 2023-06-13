@@ -6,7 +6,7 @@
 #include "strs/strs.h"
 #include <stdalign.h>
 #include "utils/utils.h"
-#include "test_yaml/test_yaml.h"
+#include "test_json/test_json.h"
 
 using namespace std;
 
@@ -22,6 +22,6 @@ int main(int argc, char const *argv[], char **envp)
 
     // test_strs();
 
-    test_yaml();
+    test_json();
     return 0;
 }

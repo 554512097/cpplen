@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.12)
 
-project(cpplen)
+project(cpplen LANGUAGES CXX)
+
+# 指定为C++11 版本
+set(CMAKE_CXX_STANDARD 11)
 
 # 工具
 aux_source_directory(./utils utilsSrc)
@@ -20,6 +23,9 @@ aux_source_directory(./test_io testIoSrc)
 # 字符串
 aux_source_directory(./strs strsSrc)
 
+# json
+aux_source_directory(./test_json jsonSrc)
+
 #设置编译器的源字符集以及目标程序字符集都为utf-8
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/source-charset:utf-8>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/execution-charset:utf-8>")
@@ -37,7 +43,7 @@ add_executable(
     ${dirSrc} 
     ${testIoSrc}
     ${strsSrc}
-    ${yamlSrc}
+    ${jsonSrc}
  )
 
-#  target_link_libraries(main yaml-cppd)
+ target_link_libraries(main jsoncpp)
